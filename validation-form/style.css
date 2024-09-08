@@ -1,0 +1,143 @@
+.logo img {
+    width: 40px;
+    opacity: 0.6;
+
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-color: #2C2C2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #0004;
+    margin-bottom: 30px;
+}
+
+
+/* 標題樣式 */
+h1 {
+    font-weight: 500;
+    color: #fff; 
+    font-size: x-large; 
+    margin-bottom: 10px; 
+}
+
+/* 白色文字類 */
+.text-white {
+    color: #fff; 
+}
+
+/* 表單樣式 */
+form {
+    display: flex;
+    flex-wrap: wrap; /* 允許元素換行 */
+    margin: auto; 
+    margin-block: 30px; 
+    width: min(300px, 90vw); /* 設置寬度，取300px和90vw中的較小值 */
+    gap: 15px; /* 設置元素間距 */
+}
+
+/* 表單輸入框和按鈕共同樣式 */
+form input,
+form button {
+    all: unset; /* 重置所有默認樣式 */
+    padding: 10px; 
+    border-radius: 15px; 
+    background-color: #1C1C1E; 
+    box-shadow: 0 10px 30px #0005; /* 添加陰影效果 */
+    border: 1px solid #71717188; /* 設置邊框 */
+    transition: background-image 0.5s, opacity .5s, border .5s; /* 添加過渡效果 */
+}
+
+/* 表單內所有元素樣式 */
+form * {
+    width: 100%!important; /* 設置寬度為100% */
+}
+
+/* 表單輸入框樣式 */
+form input {
+    color: #fff; /* 設置文字顏色為白色 */
+}
+
+/* 表單按鈕樣式 */
+form button {
+    cursor: pointer; /* 設置鼠標樣式為手型 */
+}
+
+/* 提交按鈕樣式 */
+form button[type="submit"] {
+    background-color: #fff; /* 設置背景顏色為白色 */
+    color: #1C1C1E; /* 設置文字顏色 */
+}
+
+.or {
+    position: relative;
+}
+.or::before {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    content: '';
+    left: 0;
+    top: 45%;
+    background-image: linear-gradient(
+        to right, 
+        #71717155 0 40%, transparent 40% 60%, #71717155 60%
+    );
+}
+/* p a {
+    border-bottom: 1px solid #717171;
+}
+input + p {
+    font-size: small;
+    text-align: left;
+}
+.sso {
+    margin-bottom: 30px;
+}
+.sso + p {
+    font-size: small;
+} */
+
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+    background-image: url(images/checked_red.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+input:valid:not(:placeholder-shown) {
+    background-image: url(images/checked_green.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+input:invalid:not(:placeholder-shown),
+input:valid:not(:placeholder-shown) {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+/* 當輸入框無效且不顯示佔位符時，將相鄰的 <p> 元素設置為紅色並顯示 */
+input:invalid:not(:placeholder-shown) + p {
+    color: red;
+    
+}
+
+/* input:placeholder-shown + p,
+input:valid + p {
+    display: none; 
+} */
+
+input:invalid ~ button[type="submit"] {
+    opacity: 0.6;
+    pointer-events: none; /* 禁用按鈕的所有鼠標事件，使其無法點擊 */
+}
+
